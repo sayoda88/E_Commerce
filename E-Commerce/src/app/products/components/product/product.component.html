@@ -1,0 +1,23 @@
+<div class="card item" style="width: 18rem;">
+    <div class="card-body body" routerLink="/details/{{product.id}}">
+        <img [src]="product.image" class="card-img-top " alt="...">
+        <h5 class="card-title pt-3">{{product.title}}</h5>
+        <p class="card-text">
+            {{product.description}}
+        </p>
+
+    </div>
+    <div class="px-3 mb-2 d-flex justify-content-between align-items-center ">
+        <button class="btn btn-success" *ngIf="!addBtn" (click)="addBtn=true">Add To Cart</button>
+        <div class="d-flex w-50 " *ngIf="addBtn">
+            <input type="number" class="form-control" min="1" [(ngModel)]="amount">
+            <button class="btn btn-danger" (click)="addProduct();addBtn=false">Add</button>
+        </div>
+        <span>{{product.price}} L.E</span>
+    </div>
+</div>
+<!-- <div id="alertMsg">
+    <div class="alert alert-warning" role="alert">
+        A simple warning alert—check it out!
+    </div>
+</div> -->

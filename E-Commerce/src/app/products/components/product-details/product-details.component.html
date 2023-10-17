@@ -1,0 +1,24 @@
+<div class="box">
+    <div class="row" *ngIf="!isLoading">
+        <div class="col-md-5 col-sm-12">
+            <img [src]="prodDetails?.image" alt="saas">
+        </div>
+        <div class="col-md-7 col-sm-12">
+            <div class="info">
+                <ul class="list-unstyled">
+                    <li><strong class="main-color px-3">Title : </strong>{{prodDetails?.title}}</li>
+                    <li><strong class="main-color px-3">Category : </strong>{{prodDetails?.category}}</li>
+                    <li><strong class="main-color px-3">Description : </strong>{{prodDetails?.description}}</li>
+                    <li><strong class="main-color px-3">Rate : </strong>{{prodDetails?.rating?.rate}}</li>
+                    <li><strong class="main-color px-3">Count : </strong>{{prodDetails?.rating?.count}}</li>
+                    <li><strong class="main-color px-3">Price : </strong>{{prodDetails?.price}}</li>
+                </ul>   
+            </div>
+
+        </div>
+    </div>
+    <div class="text-center" *ngIf="isLoading">
+        <app-spinner></app-spinner>
+    </div>
+</div>
+

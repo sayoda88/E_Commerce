@@ -1,0 +1,32 @@
+<div class="mt-5">
+    <div class="my-2 w-25">
+        <app-select [recData]="allCategories" [title]="'Categories'" (selectedCateName)="filterCategory($event)"></app-select>
+    </div>
+    <div class="row" *ngIf="!isLoading" >
+        <div class="col-md-3 col-sm-12" *ngFor="let prod of allProducts" >
+            <app-product [product]="prod" (selectedProd)="addToCart($event)"></app-product>
+        </div>
+    </div>
+    <div class="text-center w-100 py-5" *ngIf="isLoading">
+        <app-spinner></app-spinner>
+    </div>
+</div>
+
+
+
+<!-- 
+        
+            <div  class="item">
+                <img [src]="prod.image" alt="">
+                <div class="body">
+                    <h4>{{prod.title}}</h4>
+                    <p>Test Add Descriptions</p>
+                </div>
+                <div class="px-3 mb-2 d-flex justify-content-between align-items-center ">
+                    <button class="btn btn-success">Add To Cart</button>
+                    <span>50 L.E</span>
+                </div>
+            </div>
+        </div> 
+    
+-->
